@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<div class="big">
+    <div class="container">
+        <div class="title" data-aos="fade-down">
+            <h1 class="main name">Reddipic</h1>
+            <h3>Reddipic allows users to scrape Reddit's user posted images and material in a very Cozy way.</h3>
+            <div>
+                <a class="button a" href="https://reddipic.netlify.app">Check it out!</a>        <a class="button b" href="https://github.com/that0therGuy/Reddipic">Github</a>
+
+            </div>
+
+        </div>
+        <div class="title" data-aos="fade-down">
+            <h1 class="main name">Notepad.js</h1>
+            <h3>Notepad.js allows users to write Javascript code without any distractions or ads or popups with great user customization.</h3>
+            <div>        <a class="button a" href="https://js-notepad.netlify.app">Check it out!</a>        <a class="button b" href="https://github.com/that0therGuy/notepad.js">Github</a>
+            </div>
+        </div>
+        <div class="title" data-aos="fade-down">
+            <h1 class="main name">UtilityBuddy</h1>
+            <h3>UtilityBuddy allows users to quickly find and use various utilities they find extremely helpful and user-friendly.</h3>
+            <div>
+                <a class="button a" href="https://utilitybuddy.netlify.app">Check it out!</a>        <a class="button b" href="https://github.com/that0therGuy/utilitybuddy">Github</a>
+
+            </div>
+
+        </div>
+        <div class="title" data-aos="fade-down">
+            <h1 class="main name">Qool.js</h1>
+            <h3>An NPM library that allows developers to quickly, effectively and easily manipulate the Frontend. It contains various functions that is helpful for developers and incorporates CSS into javascript.</h3>
+            <div>
+                <a class="button a" href="https://www.npmjs.com/package/qool.js">Check it out!</a>        <a class="button b" href="https://github.com/that0therGuy/qool.js">Github</a>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<div class="manyform" data-aos="fade-down">
+    <div class="title many">
+        <h1 class="small">Find more on <a href="http://github.com/that0therguy" class="name">Github</a> <img src="git.png" height="24" width="24"></h1>
+        <h1 class="small">Back to  <a class='name ' href="index.html">Homepage</a><img src="home.svg" height="24" width="24"></h1>
+    </div>
+
+</div>
+<div id="scene">
+    <div class="background" data-depth="0.2">
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    *{
+        color:white;
+        text-align: center;
+        font-family:'Outfit',sans-serif;
+        letter-spacing: 2px;
+        font-weight:400;
+        margin:2px;
+    }
+    body{
+        background-color:rgb(19,19,19);
+        margin:20px;
+        padding:30px;
+    }
+
+
+    .big{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .container {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 1fr 1fr ;
+        gap:20px;
+        place-items: center;
+
+
+    }
+    .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:75%;
+        flex-direction: column;
+        width:75%;
+        padding:30px;
+        border-radius:5px;
+        margin:50px;
+
+        animation: bob 1s ease-in-out infinite;
+
+
+    }
+    .manyform{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .many {
+        width:75vw;
+
+
+
+    }
+
+    .main{
+        font-weight:800;
+        display:inline-block;
+
+    }
+    a{
+        display:inline-block;
+        font-size:32px;
+        padding:2px;
+    }
+    .name{
+        font-weight:800;
+        background: linear-gradient(90deg, rgba(57,52,179,1) 0%, rgba(175,171,255,1) 100%);
+        color:transparent;
+        background-clip: text;
+        text-decoration: underline;
+        transition: all .5s ;
+        font-size: 25px;
+
+
+    }
+
+
+    .name:hover{
+        opacity: .9;
+        filter: blur(1px);
+        cursor:pointer;
+    }
+    @keyframes bob {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.015);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes sidebob {
+        0% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+    @keyframes sidebob2 {
+        0% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(-5px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    .title {
+        position: relative;
+        z-index: 0; /* We force a stacking context */
+    }
+    /* Creates the shadow */
+    .title {
+
+
+
+        background: rgb(19,19,19);
+        position: relative;
+        z-index: 0;
+    }
+    .title:before{
+        content:"";
+        position: absolute;
+        inset: -5px;
+
+        z-index: -2;
+        background: conic-gradient(from 90deg at 40% -25%,  rgba(57,52,179,.7) 0%, rgba(92,121,218,.7) 49%, rgba(175,171,255,.7) 100%);
+        filter: blur(10px);
+    }
+    .title:after {
+        border-radius: 4px;
+        content:"";
+        position: absolute;
+        inset: -2px;
+        z-index: -1;
+        background: inherit;
+        border: inherit;
+        box-shadow: inherit;
+    }
+    .img{
+        height: 50px;
+        width:50px;
+        border-radius: 50%;
+    }
+    .button{
+        margin:5px;
+
+        margin-top:40px;
+        font-weight:700;
+        text-decoration: none;
+        font-size:20px;
+        border-radius:5px !important;
+        padding:15px;
+
+
+        transition: all .7s;
+
+
+        border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+        border-width: 2px;
+        border-style: solid;
+
+
+
+    }
+
+    .a{
+        animation: sidebob2 .8s ease-in-out infinite;
+    }
+    .b{
+        animation: sidebob .8s ease-in-out infinite;
+    }
+    .b:hover{
+        animation: sidebob .8s ease infinite;
+    }
+    .small{
+        font-size:25px;
+    }
+    .a:hover{
+        animation: sidebob2 .8s ease infinite;
+    }
+    .button:hover{
+        filter: blur(1px);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(58, 78, 213, 0.4);
+
+
+
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .container {
+            display: grid;
+
+            grid-template-columns: 1fr; /* 1 row */
+            gap: 10px;
+        }
+        body{
+            margin:40px;
+        }
+        .main, .name {
+            font-size: 20px;
+        }
+        .title {
+            flex-direction: column;
+            width: 100%; /* Adjust title width to fit within 1 column */
+        }
+        .many{
+            font-size:10px;
+        }
+    }
+    .background {
+        position: absolute;
+        top: 300px;
+        left: 300px;
+        height: 100%;
+        width: 120%;
+        background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
+        background-position: 0 0;
+        background-size: 35px 35px;
+        z-index: 500; /* Ensure it stays behind content */
+        pointer-events: none; /* Prevent interactions blocking content */
+    }
+    #scene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;  /* Push further behind everything */
+        pointer-events: none; /* Avoid accidental interactions */
+    }
+</style>
+<script>
+    AOS.init();
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene);
+</script>
+</body>
+</html>
