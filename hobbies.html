@@ -7,6 +7,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            color:white;
+            text-align: center;
+            font-family:'Outfit',sans-serif;
+            letter-spacing: 2px;
+            font-weight:400;
+            margin:2px;
+        }
+        body{
+            background-color:rgb(19,19,19);
+            margin:20px;
+            padding:30px;
+        }
+
+
+        .big{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .buttonset{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .container {
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows: 1fr 1fr ;
+            gap:30px;
+            place-items: center;
+
+
+        }
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:75%;
+            flex-direction: column;
+            width:75%;
+            padding:30px;
+            border-radius:5px;
+            margin:50px;
+
+            animation: bob 1s ease-in-out infinite;
+
+
+        }
+        .manyform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .many {
+            width:75vw;
+
+
+
+        }
+        .small{
+            font-size:25px;
+        }
+
+        .main{
+            font-weight:800;
+            display:inline-block;
+
+        }
+        a{
+            display:inline-block;
+            font-size:32px;
+            padding:2px;
+        }
+        .name{
+            font-weight:800;
+            background: linear-gradient(90deg, rgba(57,52,179,1) 0%, rgba(175,171,255,1) 100%);
+            color:transparent;
+            background-clip: text;
+            text-decoration: underline;
+            transition: all .5s ;
+
+
+        }
+        .name:hover{
+            opacity: .9;
+            filter: blur(1px);
+            cursor:pointer;
+        }
+        @keyframes bob {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.015);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes sidebob {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes sidebob2 {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        .title {
+            position: relative;
+            z-index: 0; /* We force a stacking context */
+        }
+        /* Creates the shadow */
+        .title {
+
+
+
+            background: rgb(19,19,19);
+            position: relative;
+            z-index: 0;
+        }
+        .title:before{
+            content:"";
+            position: absolute;
+            inset: -5px;
+
+            z-index: -2;
+            background: conic-gradient(from 90deg at 40% -25%,  rgba(57,52,179,.7) 0%, rgba(92,121,218,.7) 49%, rgba(175,171,255,.7) 100%);
+            filter: blur(10px);
+        }
+        .title:after {
+            border-radius: 4px;
+            content:"";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: inherit;
+            border: inherit;
+            box-shadow: inherit;
+        }
+        .img{
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+        }
+        .button{
+            margin:5px;
+
+            margin-top:40px;
+            font-weight:700;
+            text-decoration: none;
+            font-size:20px;
+            border-radius:5px !important;
+            padding:15px;
+
+
+            transition: all .7s;
+
+
+            border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+            border-width: 2px;
+            border-style: solid;
+
+
+
+        }
+
+        .a{
+            animation: sidebob2 .8s ease-in-out infinite;
+        }
+        .b{
+            animation: sidebob .8s ease-in-out infinite;
+        }
+        .b:hover{
+            animation: sidebob .8s ease infinite;
+        }
+        .a:hover{
+            animation: sidebob2 .8s ease infinite;
+        }
+        .button:hover{
+            filter: blur(1px);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(58, 78, 213, 0.4);
+
+
+
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                display: grid;
+
+                grid-template-columns: 1fr; /* 1 row */
+                gap: 10px;
+            }
+            .button{
+                scale:.8;
+            }
+
+            body{
+                margin:40px;
+                overflow-x: hidden;
+                padding:40px;
+            }
+            .main, .name {
+                font-size: 20px;
+            }
+            .title {
+                flex-direction: column;
+                width: 80vw;
+                margin:30px;
+            }
+            .many{
+                font-size:10px;
+                width:90vw;
+            }
+            .small,.namex{
+                font-size:14px;
+            }
+        }
+        .background {
+            position: absolute;
+            top: 300px;
+            left: 300px;
+            height: 100%;
+            width: 120%;
+            background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
+            background-position: 0 0;
+            background-size: 35px 35px;
+            z-index: 500; /* Ensure it stays behind content */
+            pointer-events: none; /* Prevent interactions blocking content */
+        }
+        #scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;  /* Push further behind everything */
+            pointer-events: none; /* Avoid accidental interactions */
+        }
+    </style>
 </head>
 <body>
 
@@ -65,277 +336,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    *{
-        color:white;
-        text-align: center;
-        font-family:'Outfit',sans-serif;
-        letter-spacing: 2px;
-        font-weight:400;
-        margin:2px;
-    }
-    body{
-        background-color:rgb(19,19,19);
-        margin:20px;
-        padding:30px;
-    }
-
-
-    .big{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-    }
-    .buttonset{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
-    .container {
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-rows: 1fr 1fr ;
-        gap:30px;
-        place-items: center;
-
-
-    }
-    .title{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height:75%;
-        flex-direction: column;
-        width:75%;
-        padding:30px;
-        border-radius:5px;
-        margin:50px;
-
-        animation: bob 1s ease-in-out infinite;
-
-
-    }
-    .manyform{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .many {
-        width:75vw;
-
-
-
-    }
-    .small{
-        font-size:25px;
-    }
-
-    .main{
-        font-weight:800;
-        display:inline-block;
-
-    }
-    a{
-        display:inline-block;
-        font-size:32px;
-        padding:2px;
-    }
-    .name{
-        font-weight:800;
-        background: linear-gradient(90deg, rgba(57,52,179,1) 0%, rgba(175,171,255,1) 100%);
-        color:transparent;
-        background-clip: text;
-        text-decoration: underline;
-        transition: all .5s ;
-
-
-    }
-    .name:hover{
-        opacity: .9;
-        filter: blur(1px);
-        cursor:pointer;
-    }
-    @keyframes bob {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.015);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-    @keyframes sidebob {
-        0% {
-            transform: translateX(0px);
-        }
-
-        50% {
-            transform: translateX(5px);
-        }
-
-        100% {
-            transform: translateX(0px);
-        }
-    }
-    @keyframes sidebob2 {
-        0% {
-            transform: translateX(0px);
-        }
-
-        50% {
-            transform: translateX(-5px);
-        }
-
-        100% {
-            transform: translateX(0px);
-        }
-    }
-
-    .title {
-        position: relative;
-        z-index: 0; /* We force a stacking context */
-    }
-    /* Creates the shadow */
-    .title {
-
-
-
-        background: rgb(19,19,19);
-        position: relative;
-        z-index: 0;
-    }
-    .title:before{
-        content:"";
-        position: absolute;
-        inset: -5px;
-
-        z-index: -2;
-        background: conic-gradient(from 90deg at 40% -25%,  rgba(57,52,179,.7) 0%, rgba(92,121,218,.7) 49%, rgba(175,171,255,.7) 100%);
-        filter: blur(10px);
-    }
-    .title:after {
-        border-radius: 4px;
-        content:"";
-        position: absolute;
-        inset: -2px;
-        z-index: -1;
-        background: inherit;
-        border: inherit;
-        box-shadow: inherit;
-    }
-    .img{
-        height: 50px;
-        width:50px;
-        border-radius: 50%;
-    }
-    .button{
-        margin:5px;
-
-        margin-top:40px;
-        font-weight:700;
-        text-decoration: none;
-        font-size:20px;
-        border-radius:5px !important;
-        padding:15px;
-
-
-        transition: all .7s;
-
-
-        border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
-        border-width: 2px;
-        border-style: solid;
-
-
-
-    }
-
-    .a{
-        animation: sidebob2 .8s ease-in-out infinite;
-    }
-    .b{
-        animation: sidebob .8s ease-in-out infinite;
-    }
-    .b:hover{
-        animation: sidebob .8s ease infinite;
-    }
-    .a:hover{
-        animation: sidebob2 .8s ease infinite;
-    }
-    .button:hover{
-        filter: blur(1px);
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(58, 78, 213, 0.4);
-
-
-
-    }
-
-
-    @media only screen and (max-width: 600px) {
-        .container {
-            display: grid;
-
-            grid-template-columns: 1fr; /* 1 row */
-            gap: 10px;
-        }
-        .button{
-            scale:.8;
-        }
-
-        body{
-            margin:40px;
-            overflow-x: hidden;
-            padding:40px;
-        }
-        .main, .name {
-            font-size: 20px;
-        }
-        .title {
-            flex-direction: column;
-            width: 80vw;
-            margin:30px;
-        }
-        .many{
-            font-size:10px;
-            width:90vw;
-        }
-        .small,.namex{
-            font-size:14px;
-        }
-    }
-    .background {
-        position: absolute;
-        top: 300px;
-        left: 300px;
-        height: 100%;
-        width: 120%;
-        background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
-        background-position: 0 0;
-        background-size: 35px 35px;
-        z-index: 500; /* Ensure it stays behind content */
-        pointer-events: none; /* Prevent interactions blocking content */
-    }
-    #scene {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;  /* Push further behind everything */
-        pointer-events: none; /* Avoid accidental interactions */
-    }
-</style>
 <script>
     AOS.init();
     var scene = document.getElementById('scene');

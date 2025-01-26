@@ -6,6 +6,250 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            color:white;
+            text-align: center;
+            font-family:'Outfit',sans-serif;
+            letter-spacing: 2px;
+            font-weight:400;
+            margin:2px;
+        }
+        body{
+            background-color:rgb(19,19,19);
+            margin:0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100svh;
+
+            flex-direction: row;
+        }
+        .set1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap:100px;
+        }
+
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:max-content;
+            width:fit-content;
+            padding:30px;
+            border-radius:5px;
+
+            animation: bob 1s ease-in-out infinite;
+        }
+        .main{
+            font-weight:800;
+            display:inline-block;
+
+        }
+        a{
+            display:inline-block;
+            font-size:32px;
+            padding:2px;
+        }
+        .name{
+            font-weight:800;
+            background: linear-gradient(90deg, rgba(57,52,179,1) 0%, rgba(175,171,255,1) 100%);
+            color:transparent;
+            background-clip: text;
+            text-decoration: underline;
+            transition: all .5s ;
+
+        }
+        .name:hover{
+            opacity: .9;
+            filter: blur(1px);
+            cursor:pointer;
+        }
+        @keyframes bob {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes sidebob {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes sidebob2 {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        .title {
+            position: relative;
+            z-index: 0; /* We force a stacking context */
+        }
+        /* Creates the shadow */
+        .title,.button {
+
+
+
+            background: rgb(19,19,19);
+            position: relative;
+            z-index: 0;
+        }
+        .title:before,.button:before {
+            content:"";
+            position: absolute;
+            inset: -5px;
+
+            z-index: -2;
+            background: conic-gradient(from 90deg at 40% -25%, rgb(38, 34, 119) 0%, rgba(92,121,218,1) 49%, rgba(175,171,255,1) 100%);
+            filter: blur(10px);
+        }
+        .title:after,.button:after {
+            border-radius: 4px;
+            content:"";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: inherit;
+            border: inherit;
+            box-shadow: inherit;
+        }
+        .img{
+            height: 50px;
+            width:50px;
+            border-radius: 50%;
+        }
+        .a,.b{
+            margin-right:100px;
+            margin-left: 0;
+            font-weight:700;
+            text-decoration: none;
+            font-size:20px;
+            border-radius:5px;
+            padding:15px;
+            transition: all .7s;
+
+
+        }
+        .b{
+            margin-right:0;
+            margin-left: 100px;
+        }
+        .a{
+            animation: sidebob2 .8s ease-in-out infinite;
+        }
+        .b{
+            animation: sidebob .8s ease-in-out infinite;
+        }
+        .b:hover{
+            animation: sidebob .8s ease infinite;
+        }
+        .a:hover{
+            animation: sidebob2 .8s ease infinite;
+        }
+        .down:hover{
+            filter: grayscale(70%);
+            margin-right:150px;
+
+
+        }
+        .up:hover{
+            filter: grayscale(70%);
+            margin-right:150px;
+
+
+        }
+        .bup:hover{
+            filter: grayscale(70%);
+            margin-left:150px;
+
+
+        }
+        .bdown:hover{
+            filter: grayscale(70%);
+            margin-left:150px;
+
+        }
+        .button{
+            scale:1.1;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            .main,.name{
+                font-size:20px;
+            }
+            .title{
+                flex-direction: column;
+                width:50%;
+                margin-bottom:40px;
+                margin-top:40px;
+
+            }
+            .button{
+                margin:10px;
+            }
+            .set1{
+                gap:10px;
+
+            }
+        }
+        .background {
+            position: absolute;
+            top: 300px;
+            left: 300px;
+            height: 100%;
+            width: 120%;
+            background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
+            background-position: 0 0;
+            background-size: 35px 35px;
+            z-index: 500; /* Ensure it stays behind content */
+            pointer-events: none; /* Prevent interactions blocking content */
+        }
+        #scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;  /* Push further behind everything */
+            pointer-events: none; /* Avoid accidental interactions */
+        }
+    </style>
 
 </head>
 <body>
@@ -34,250 +278,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    *{
-        color:white;
-        text-align: center;
-        font-family:'Outfit',sans-serif;
-        letter-spacing: 2px;
-        font-weight:400;
-        margin:2px;
-    }
-    body{
-        background-color:rgb(19,19,19);
-        margin:0;
-        box-sizing: border-box;
-    }
-    .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height:100svh;
-
-        flex-direction: row;
-    }
-    .set1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap:100px;
-    }
-
-    .title{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height:max-content;
-        width:fit-content;
-        padding:30px;
-        border-radius:5px;
-
-        animation: bob 1s ease-in-out infinite;
-    }
-    .main{
-        font-weight:800;
-        display:inline-block;
-
-    }
-    a{
-        display:inline-block;
-        font-size:32px;
-        padding:2px;
-    }
-    .name{
-        font-weight:800;
-        background: linear-gradient(90deg, rgba(57,52,179,1) 0%, rgba(175,171,255,1) 100%);
-        color:transparent;
-        background-clip: text;
-        text-decoration: underline;
-        transition: all .5s ;
-
-    }
-    .name:hover{
-        opacity: .9;
-        filter: blur(1px);
-        cursor:pointer;
-    }
-    @keyframes bob {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.02);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-    @keyframes sidebob {
-        0% {
-            transform: translateX(0px);
-        }
-
-        50% {
-            transform: translateX(5px);
-        }
-
-        100% {
-            transform: translateX(0px);
-        }
-    }
-    @keyframes sidebob2 {
-        0% {
-            transform: translateX(0px);
-        }
-
-        50% {
-            transform: translateX(-5px);
-        }
-
-        100% {
-            transform: translateX(0px);
-        }
-    }
-
-    .title {
-        position: relative;
-        z-index: 0; /* We force a stacking context */
-    }
-    /* Creates the shadow */
-    .title,.button {
-
-
-
-        background: rgb(19,19,19);
-        position: relative;
-        z-index: 0;
-    }
-    .title:before,.button:before {
-        content:"";
-        position: absolute;
-        inset: -5px;
-
-        z-index: -2;
-        background: conic-gradient(from 90deg at 40% -25%, rgb(38, 34, 119) 0%, rgba(92,121,218,1) 49%, rgba(175,171,255,1) 100%);
-        filter: blur(10px);
-    }
-    .title:after,.button:after {
-        border-radius: 4px;
-        content:"";
-        position: absolute;
-        inset: -2px;
-        z-index: -1;
-        background: inherit;
-        border: inherit;
-        box-shadow: inherit;
-    }
-    .img{
-        height: 50px;
-        width:50px;
-        border-radius: 50%;
-    }
-    .a,.b{
-        margin-right:100px;
-        margin-left: 0;
-        font-weight:700;
-        text-decoration: none;
-        font-size:20px;
-        border-radius:5px;
-        padding:15px;
-        transition: all .7s;
-
-
-    }
-    .b{
-        margin-right:0;
-        margin-left: 100px;
-    }
-    .a{
-        animation: sidebob2 .8s ease-in-out infinite;
-    }
-    .b{
-        animation: sidebob .8s ease-in-out infinite;
-    }
-    .b:hover{
-        animation: sidebob .8s ease infinite;
-    }
-    .a:hover{
-        animation: sidebob2 .8s ease infinite;
-    }
-    .down:hover{
-        filter: grayscale(70%);
-        margin-right:150px;
-
-
-    }
-    .up:hover{
-        filter: grayscale(70%);
-        margin-right:150px;
-
-
-    }
-    .bup:hover{
-        filter: grayscale(70%);
-        margin-left:150px;
-
-
-    }
-    .bdown:hover{
-        filter: grayscale(70%);
-        margin-left:150px;
-
-    }
-    .button{
-        scale:1.1;
-    }
-
-
-    @media only screen and (max-width: 600px) {
-        .container {
-            flex-direction: column;
-        }
-        .main,.name{
-            font-size:20px;
-        }
-        .title{
-            flex-direction: column;
-            width:50%;
-            margin-bottom:40px;
-            margin-top:40px;
-
-        }
-        .button{
-            margin:10px;
-        }
-        .set1{
-            gap:10px;
-
-        }
-    }
-    .background {
-        position: absolute;
-        top: 300px;
-        left: 300px;
-        height: 100%;
-        width: 120%;
-        background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
-        background-position: 0 0;
-        background-size: 35px 35px;
-        z-index: 500; /* Ensure it stays behind content */
-        pointer-events: none; /* Prevent interactions blocking content */
-    }
-    #scene {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;  /* Push further behind everything */
-        pointer-events: none; /* Avoid accidental interactions */
-    }
-</style>
 <script>
     AOS.init();
     var scene = document.getElementById('scene');
