@@ -19,9 +19,7 @@
         }
         body{
             background-color:rgb(19,19,19);
-            margin-top: 30px;
 
-            margin-bottom: 30px;
             box-sizing: border-box;
         }
         .container{
@@ -114,17 +112,21 @@
                 transform: translateX(0px);
             }
         }
-        .background {
+        .background,.background2 {
             position: absolute;
             top: 300px;
             left: 300px;
             height: 100%;
             width: 120%;
-            background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
+            background-image: radial-gradient(circle, #162a44 1px, transparent 1px);
             background-position: 0 0;
             background-size: 35px 35px;
             z-index: 500; /* Ensure it stays behind content */
             pointer-events: none; /* Prevent interactions blocking content */
+        }
+        .background2{
+            background-image: radial-gradient(circle, #4c85d2 1px, transparent 1px);
+            background-size: 80px 70px;
         }
         #scene {
             position: fixed;
@@ -211,25 +213,25 @@
         }
         .down:hover{
             filter: grayscale(70%);
-            margin-right:150px;
+            margin-right:140px;
             margin-top:20px;
 
         }
         .up:hover{
             filter: grayscale(70%);
-            margin-right:150px;
+            margin-right:140px;
             margin-bottom:20px;
 
         }
         .bup:hover{
             filter: grayscale(70%);
-            margin-left:150px;
+            margin-left:140px;
             margin-top:20px;
 
         }
         .bdown:hover{
             filter: grayscale(70%);
-            margin-left:150px;
+            margin-left:140px;
             margin-bottom:20px;
 
         }
@@ -244,6 +246,11 @@
             }
             .main,.name{
                 font-size:20px;
+            }
+            body{
+                margin-top: 30px;
+
+                margin-bottom: 30px;
             }
             .title{
                 flex-direction: column;
@@ -295,6 +302,9 @@
 </div>
 <div id="scene">
     <div class="background" data-depth="0.2">
+
+    </div>
+    <div class="background2" data-depth="0.5">
 
     </div>
 </div>

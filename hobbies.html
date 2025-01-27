@@ -256,17 +256,21 @@
                 font-size:14px;
             }
         }
-        .background {
+        .background,.background2 {
             position: absolute;
             top: 300px;
             left: 300px;
             height: 100%;
             width: 120%;
-            background-image: radial-gradient(circle, #2c5080 1px, transparent 1px);
+            background-image: radial-gradient(circle, #162a44 1px, transparent 1px);
             background-position: 0 0;
             background-size: 35px 35px;
             z-index: 500; /* Ensure it stays behind content */
             pointer-events: none; /* Prevent interactions blocking content */
+        }
+        .background2{
+            background-image: radial-gradient(circle, #4c85d2 1px, transparent 1px);
+            background-size: 80px 70px;
         }
         #scene {
             position: fixed;
@@ -330,6 +334,9 @@
 </div>
 <div id="scene">
     <div class="background" data-depth="0.2">
+
+    </div>
+    <div class="background2" data-depth="0.5">
 
     </div>
 </div>
