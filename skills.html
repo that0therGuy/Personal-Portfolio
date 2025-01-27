@@ -8,8 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     *{
       color:white;
       text-align: center;
@@ -254,6 +253,11 @@
 
 
     }
+    .button{
+      scale:1.1;
+      font-family:"JetBrains Mono";
+      font-weight:500;
+    }
 
 
     @media only screen and (max-width: 600px) {
@@ -264,9 +268,9 @@
         font-size:20px;
       }
       body{
-        margin-top: 30px;
-
-        margin-bottom: 30px;
+        padding:40px;
+        margin-right:40px;
+        margin-left:40px;
       }
       .title{
         flex-direction: column;
@@ -279,6 +283,10 @@
         margin:10px;
         scale:.9;
         height:50%;
+      }
+      .button:hover{
+        margin:10px;
+
       }
       .set1{
         gap:10px;
@@ -306,9 +314,9 @@
 
 <div class="container" data-aos="fade-down">
   <div class="set1">
-    <a class='button a up' href="projects.html">HTML <img class='imgz'src="html.svg" width="32" height="32" style="" ></a>
-    <a class='button a acenter' href="projects.html">CSS <img class='imgz'src="css.svg" width="32" height="32" style="" ></a>
-    <a class='button a down' href="hobbies.html">JS <img class='imgz'src="js.svg" width="32" height="32" style="" ></a>
+    <a class='button a up'>HTML <img class='imgz'src="html.svg" width="32" height="32" style="" ></a>
+    <a class='button a acenter' >CSS <img class='imgz'src="css.svg" width="32" height="32" style="" ></a>
+    <a class='button a down'>JS <img class='imgz'src="js.svg" width="32" height="32" style="" ></a>
   </div>
 
 
@@ -323,9 +331,9 @@
 
   </div>
   <div class="set1">
-    <a class='button b bdown' href="skills.html">R <img class='imgz'src="r.svg" width="32" height="32" style="" ></a>
-    <a class='button b bcenter' href="projects.html">Python <img class='imgz'src="python.svg" width="32" height="32" style="" ></a>
-    <a class='button b bup' href="contact.html">MySQL <img class='imgz'src="mysql.svg" width="32" height="32" style="" ></a>
+    <a class='button b bdown' >R <img class='imgz'src="r.svg" width="32" height="32" style="" ></a>
+    <a class='button b bcenter'>Python <img class='imgz'src="python.svg" width="32" height="32" style="" ></a>
+    <a class='button b bup' >MySQL <img class='imgz'src="mysql.svg" width="32" height="32" style="" ></a>
   </div>
 
 </div>
